@@ -1,12 +1,12 @@
 BACKUP_DIR = ~/backup
 
-APP_SERVICE_NAME = isubata.golang
-APP_SOURCE_DIR = ~/isubata/webapp/go/
+APP_SERVICE_NAME = isu-go
+APP_SOURCE_DIR = ~/private_isu/webapp/golang/src/main/
 
 NGINX_ACCESS_LOG = /var/log/nginx/access.log
 NGINX_ERROR_LOG = /var/log/nginx/error.log
 
-MYSQL_USERNAME = isucon
+MYSQL_USERNAME = isuconp
 MYSQL_LOG = /var/log/mysql/mysql.log
 MYSQL_ERROR_LOG = /var/log/mysql/error.log
 MYSQL_SLOW_LOG = /var/log/mysql/slow.log
