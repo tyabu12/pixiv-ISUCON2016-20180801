@@ -20,3 +20,11 @@ function simamon() {
   shimamon $1 $2
 }
 
+if [ -f ~/.git-completion.bash ] ; then
+  . ~/.git-completion.bash
+fi
+if [ -f ~/.git-prompt.sh ] ; then
+  . ~/.git-prompt.sh
+fi
+export PS1='\u@\h \W$(__git_ps1 " [%s]")\$ '
+
