@@ -1,7 +1,7 @@
 BACKUP_DIR = ~/backup
 
 APP_SERVICE_NAME = isu-go
-APP_SOURCE_DIR = ~/private_isu/webapp/golang/src/main/
+APP_SOURCE_DIR = ~/private_isu/webapp/golang/
 
 NGINX_ACCESS_LOG = /var/log/nginx/access.log
 NGINX_ERROR_LOG = /var/log/nginx/error.log
@@ -22,7 +22,7 @@ app-log: ## Show Log App Service
 
 app-rebuild: ## Rebuild and Restart App
 	@echo -n "Rebuilding ${APP_SERVICE_NAME}... "
-	@(cd ${APP_SOURCE_DIR}; make) \
+	@(cd ${APP_SOURCE_DIR}; ./setup.sh) \
 		&& echo 'done!'
 	@make -s app-restart
 
@@ -43,7 +43,7 @@ nginx-reload: ## Reload Nginx
 	@sudo nginx -t \
 		&& echo 'done!' \
 		&& echo -n 'Reload Nginx conf... ' \
-		&& nginx -s reload \
+		&& sudo nginx -s reload \
 		&& echo 'done!'
 
 nginx-restart: ## Restart Nginx
